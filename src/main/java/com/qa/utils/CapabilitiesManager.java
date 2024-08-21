@@ -81,8 +81,8 @@ public class CapabilitiesManager {
                     options.setAutomationName("UiAutomator2")
                             .setAppPackage("com.swaglabsmobileapp")
                             .setAppActivity("com.swaglabsmobileapp.SplashActivity")
-                            .setSystemPort(10000)
-                            .setChromedriverPort(11000)
+                            .setSystemPort(parameters.getSystemPort())
+                            .setChromedriverPort(parameters.getChromeDriverPort())
                             .setApp(androidApp.getAbsolutePath());
 
                             System.out.println("Android app path: " + androidApp.getAbsolutePath());
