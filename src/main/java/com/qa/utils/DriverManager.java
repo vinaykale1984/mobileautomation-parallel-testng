@@ -43,11 +43,6 @@ public class DriverManager {
                 throw new RuntimeException(e);
 
             }
-//            catch (IOException e) {
-//                e.printStackTrace();
-//                utils.log().info("Driver initialization failed" + e.toString());
-//                throw e;
-//            }
         }
     }
 }

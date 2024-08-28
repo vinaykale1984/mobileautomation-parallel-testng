@@ -15,7 +15,7 @@
     </test>
     <test name="Pixel8">
         <listeners>
-            <listener class-name="com.qa.listeners.TestListener" />
+            <listener class-name="com.qa.listener.TestListener" />
         </listeners>
         <parameter name="platformName" value="Android"/>
         <parameter name="udid" value="emulator-5554"/>

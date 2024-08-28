@@ -7,6 +7,7 @@ import com.qa.utils.DriverManager;
 import com.qa.utils.GlobalParameters;
 import com.qa.utils.TestUtils;
 import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -39,7 +40,8 @@ public class TestListener implements ITestListener {
 
         byte[] encoded = null;
         try{
-            encoded = Base64.encodeBase64(getFileExtension(file).getBytes());
+//            encoded = Base64.encodeBase64(getFileExtension(file).getBytes());
+            encoded = Base64.encodeBase64(FileUtils.readFileToByteArray(file));
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -70,6 +72,7 @@ public class TestListener implements ITestListener {
         {
             e.printStackTrace();
         }
+        ExtentReport.getTest().fail(result.getThrowable());
     }
 
     @Override

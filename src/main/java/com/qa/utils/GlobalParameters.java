@@ -14,7 +14,7 @@ public class GlobalParameters {
         platformName.set(platformName1);
     }
 
-    public String getPlatformName(){
+    public String getPlatformName() {
         return platformName.get();
     }
 
@@ -22,7 +22,7 @@ public class GlobalParameters {
         udid.set(udid1);
     }
 
-    public String getUdid(){
+    public String getUdid() {
         return udid.get();
     }
 
@@ -30,7 +30,7 @@ public class GlobalParameters {
         deviceName.set(deviceName1);
     }
 
-    public String getDeviceName(){
+    public String getDeviceName() {
         return deviceName.get();
     }
 
@@ -38,7 +38,7 @@ public class GlobalParameters {
         systemPort.set(systemPort1);
     }
 
-    public int getSystemPort(){
+    public int getSystemPort() {
         return systemPort.get();
     }
 
@@ -46,7 +46,7 @@ public class GlobalParameters {
         chromeDriverPort.set(chromeDriverPort1);
     }
 
-    public int getChromeDriverPort(){
+    public int getChromeDriverPort() {
         return chromeDriverPort.get();
     }
 
@@ -54,29 +54,29 @@ public class GlobalParameters {
         wdaLocalPort.set(wdaLocalPort1);
     }
 
-    public String getWdaLocalPort(){
+    public String getWdaLocalPort() {
         return wdaLocalPort.get();
     }
 
-    public void setWebkitDebugProxyPort(String webkitDebugProxyPort1){
+    public void setWebkitDebugProxyPort(String webkitDebugProxyPort1) {
         webkitDebugProxyPort.set(webkitDebugProxyPort1);
     }
 
-    public String getWebkitDebugProxyPort(){
+    public String getWebkitDebugProxyPort() {
         return webkitDebugProxyPort.get();
     }
 
-    public void initializeGlobalParameters(){
+    public void initializeGlobalParameters() {
         GlobalParameters parameters = new GlobalParameters();
         parameters.setPlatformName(System.getProperty("platformName", "Android"));
         parameters.setUdid(System.getProperty("udid", "fdd1f933"));
         parameters.setDeviceName(System.getProperty("deviceName", "OnePlus 6"));
         System.out.println(parameters.getPlatformName());
 
-        switch(parameters.getPlatformName()) {
+        switch (parameters.getPlatformName()) {
             case "Android":
-                parameters.setSystemPort(Integer.parseInt(System.getProperty("systemport", String.valueOf(10008))));
-                parameters.setChromeDriverPort(Integer.parseInt(System.getProperty("chromeDriverPort", String.valueOf(11008))));
+                parameters.setSystemPort(Integer.parseInt(System.getProperty("systemport", String.valueOf(parameters.getSystemPort()))));
+                parameters.setChromeDriverPort(Integer.parseInt(System.getProperty("chromeDriverPort", String.valueOf(parameters.getChromeDriverPort()))));
                 break;
             case "iOS":
                 parameters.setWdaLocalPort(System.getProperty("wdaLocalPort", "100009"));
