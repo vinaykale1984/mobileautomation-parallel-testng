@@ -3,7 +3,9 @@ package com.qa.pages;
 import com.qa.utils.DriverManager;
 import com.qa.utils.GlobalParameters;
 import com.qa.utils.TestUtils;
-import io.appium.java_client.*;
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.InteractsWithApps;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -17,11 +19,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.HashMap;
 
-import static io.appium.java_client.touch.offset.PointOption.point;
-
 public class BasePage {
     private AppiumDriver driver;
-//    TestUtils utils = new TestUtils();
 
     TestUtils utils = new TestUtils();
     public BasePage(){

@@ -27,7 +27,6 @@ public class DriverManager {
                 utils.log().info("Initializing driver..!!");
                 switch (parameters.getPlatformName()) {
                     case "Android":
-//                        driver = new AndroidDriver(new ServerManager().getServer().getUrl(), new CapabilitiesManager().getCaps());
                         driver = new AndroidDriver(new ServerManager().getServer().getUrl(), new CapabilitiesManager().getOptions());
                         break;
                     case "iOS":
